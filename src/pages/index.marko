@@ -1,0 +1,11 @@
+import Layout from "./layout"
+
+lasso-page package-path="./browser.json"
+include(Layout) name="Home"
+  @title -- Reações - SerasaConsumidor
+
+  @body
+    main
+      feedbacks data=data.feedbacks
+
+    toolbar ...data.averageFeedbacks

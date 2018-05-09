@@ -1,0 +1,10 @@
+[
+  {
+    "slots": {
+      "body": "<script src=\"/static/common-d040c996.js\"></script>\n<script src=\"/static/index-fe4e5329.js\"></script>\n<script>$_mod.ready();</script>",
+      "head": "<link rel=\"stylesheet\" href=\"/static/common-c4563b30.css\">"
+    },
+    "assets": [],
+    "name": "index"
+  }
+]

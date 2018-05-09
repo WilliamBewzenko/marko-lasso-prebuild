@@ -1,0 +1,116 @@
+import dayjs from 'dayjs'
+
+class {}
+
+style {
+  .feedback {
+    margin: 0 0 15px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    position: relative;
+    box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.2);
+  }
+  .feedback-header::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .feedback-ratting {
+    float: left;
+    height: 56px;
+    width: 56px;
+    margin: 0 15px 0 0;
+  }
+  .feedback-consumer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 56px;
+  }
+  .feedback-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin: 0 35px 3px 0;
+    font-size: 16px;
+  }
+  .feedback-date {
+    font-size: 12px;
+    color: #9b9b9b;
+  }
+  .feedback-product {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    height: 42px;
+    width: 42px;
+    box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+  }
+  .feedback-comment {
+    margin: 10px 5px 0;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 768px) {
+    .feedback {
+      min-height: 100px;
+      margin: 0 0 30px;
+      padding: 15px 55px 20px 100px;
+      box-sizing: border-box;
+    }
+    .feedback-ratting {
+      float: none;
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      height: 64px;
+      width: 64px;
+      margin: 0;
+    }
+    .feedback-consumer {
+      height: auto;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .feedback-name {
+      margin: 0;
+      font-size: 18px;
+    }
+    .feedback-separator {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin: 0 15px;
+      background-color: #9b9b9b;
+    }
+    .feedback-product {
+      top: 5px;
+      right: 5px;
+      box-shadow: none;
+    }
+    .feedback-date {
+      margin: 2px 0 0;
+      font-size: 14px;
+    }
+    .feedback-comment {
+      margin: 10px 0 0;
+    }
+  }
+}
+
+static function fromNow(date) {
+  return dayjs(date).format('DD/MM/YYYY [às] HH:mm')
+}
+
+div.feedback
+  div.feedback-header
+    reaction.feedback-ratting rating=input.ratting
+    div.feedback-consumer
+      div.feedback-name -- ${input.consumer.name}
+      div.feedback-separator
+      div.feedback-date -- ${fromNow(input.date)}
+    product.feedback-product product=input.origin
+  div.feedback-comment -- ${input.comment}

@@ -1,0 +1,28 @@
+<!doctype html>
+html lang="en"
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta name="author" content="William Bewzenko de Jesus"
+    meta name="description" content="Reações dos produtos SerasaConsumidor"
+
+    title
+      include(data.title)
+
+    lasso-resource path="./favicon-32x32.png" var="favicon32"
+    link rel="icon" type="image/png" sizes="32x32" href="${favicon32.url}"
+    lasso-resource path="./favicon-96x96.png" var="favicon96"
+    link rel="icon" type="image/png" sizes="96x96" href="${favicon96.url}"
+    lasso-resource path="./favicon-16x16.png" var="favicon16"
+    link rel="icon" type="image/png" sizes="16x16" href="${favicon16.url}"
+    meta name="theme-color" content="#ffffff"
+
+    lasso-head
+    link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500" rel="stylesheet"
+
+  body
+    include(data.body)
+
+    lasso-body
+
+    <!-- browser-refresh enabled=true -->

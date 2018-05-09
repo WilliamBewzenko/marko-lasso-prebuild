@@ -1,0 +1,10 @@
+[
+  {
+    "slots": {
+      "body": "<script src=\"/static/common-d040c996.js\"></script>\n<script src=\"/static/progressive-9748ff36.js\"></script>\n<script>$_mod.ready();</script>",
+      "head": "<link rel=\"stylesheet\" href=\"/static/common-c4563b30.css\">"
+    },
+    "assets": [],
+    "name": "progressive"
+  }
+]

@@ -1,0 +1,93 @@
+
+class {
+  onCreate(input) {
+    const state = {
+      keys: Object.keys(input),
+      messages: {
+        total: 'Reação de hoje',
+        eCred: 'Reação ao eCred',
+        score: 'Reação ao Score',
+        ensina: 'Reação ao Ensina',
+      },
+    };
+    state.state = 1;
+    state.key = state.keys[state.state];
+    state.average = input[state.key].avg;
+
+    this.state = state;
+  }
+
+  onMount() {
+    const rotate = () => {
+      const newState = {
+        state: this.state.state,
+      };
+      if (this.state.keys.length === this.state.state) {
+        newState.state = 1;
+      } else {
+        newState.state += 1;
+      }
+      newState.key = this.state.keys[newState.state - 1];
+      newState.average = this.input[newState.key].avg;
+
+      this.setState(newState);
+    }
+
+    setInterval(rotate.bind(this), 3000);
+  }
+}
+
+style {
+  .toolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 0 25px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+
+  }
+  .toolbar-reaction {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .toolbar-reaction h3 {
+    flex: 0 0 auto;
+    margin: 0 20px 0 0;
+    text-align: right;
+    font-size: 18px;
+  }
+  .toolbar-reaction img {
+    height: 56px;
+    width: 56px;
+    flex: 0 0 56px;
+  }
+  @media only screen and (min-width: 628px) {
+    .toolbar-reaction h3 {
+      flex-basis: auto;
+      font-size: 28px;
+    }
+    .toolbar-reaction img {
+      height: 64px;
+      width: 64px;
+      flex: 0 0 64px;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .toolbar-reaction h3 {
+      flex-basis: auto;
+      font-size: 36px;
+    }
+  }
+}
+
+footer.toolbar
+  div.toolbar-reaction
+    h3 -- ${state.messages[state.key]}
+    reaction rating=state.average

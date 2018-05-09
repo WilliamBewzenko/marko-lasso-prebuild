@@ -1,0 +1,26 @@
+static {
+  const images = {
+    angry: require.resolve('./images/angry@2x.png'),
+    indifferent: require.resolve('./images/indifferent@2x.png'),
+    happy: require.resolve('./images/happy@2x.png'),
+    love: require.resolve('./images/love@2x.png'),
+    sad: require.resolve('./images/sad@2x.png'),
+  };
+
+  function getReaction(reaction) {
+    reaction = parseInt(reaction);
+    reaction = isNaN(reaction) ? 0 : reaction;
+    if (reaction < 2) {
+      return images.angry;
+    } else if (reaction < 4) {
+      return images.sad;
+    } else if (reaction < 6) {
+      return images.indifferent;
+    } else if (reaction < 8) {
+      return images.happy;
+    }
+    return images.love;
+  }
+}
+
+lasso-img class=[input.class] src=getReaction(input.rating) width=64 height=64

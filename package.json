@@ -1,0 +1,28 @@
+{
+  "name": "lambda-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lasso/marko-taglib": "github:WilliamBewzenko/lasso-marko-taglib#6ec3c0022c6dfeefbcfbfeaeb9ee7e87485bcee4",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "compression": "^1.7.2",
+    "dayjs": "^1.5.19",
+    "express": "^4.16.3",
+    "lasso": "github:WilliamBewzenko/lasso#0717d7b1276e23fd70e5c5290da4201c67a3271b",
+    "lasso-babel-transform": "^1.0.2",
+    "lasso-marko": "^2.4.0",
+    "marko": "^4.9.7",
+    "moment": "^2.22.1",
+    "mongoose": "^5.0.17",
+    "rimraf": "^2.6.2"
+  }
+}

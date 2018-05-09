@@ -1,0 +1,9 @@
+static {
+  const images = {
+    eCred: require.resolve('./images/eCred.svg'),
+    score: require.resolve('./images/score.svg'),
+    ensina: require.resolve('./images/ensina.svg'),
+  };
+}
+
+lasso-img class=[input.class] src=images[input.product]
